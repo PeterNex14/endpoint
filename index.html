@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Radius Calculator</title>
+</head>
+<body>
+  <h1>Radius Calculator</h1>
+  <form id="circleForm" action="/calculate" method="get">
+    <label for="radiusInput">Radius:</label>
+    <input type="number" id="radiusInput" name="radius" required>
+    <button type="submit" >Calculate</button>
+  </form>
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById('circleForm');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const radius = document.getElementById('radiusInput').value;
+      calculateArea(radius);
+    });
+
+    function calculateArea(radius) {
+      fetch(`/calculate?radius=${radius}`)
+        .then(response => response.text())
+        .then(data => {
+          resultDiv.textContent = data;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  </script>
+</body>
+</html>
