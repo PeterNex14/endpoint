@@ -8,12 +8,12 @@ const server = http.createServer((req, res) => {
   if (radius === undefined) {
     res.statusCode = 400;
     res.setHeader('Content-Type', 'text/plain');
-    res.end('Error: Tolong masukkan nilai ke dalam parameter radius di url.\n\nNama : Peter Gabriel Sompotan\nNIM : 210211060245');
+    res.end('Error: Tolong masukkan nilai ke dalam parameter radius di url.\n\nNama : Peter Gabriel Sompotan\nNIM : 210211060245\nKelas : TIK2032D');
   } else {
     const area = Math.PI * radius ** 2;
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end(`Luas lingkaran dengan radius ${radius} adalah ${area}.\n`);
+    res.end(`Luas lingkaran dengan radius ${radius} adalah ${area}.\n\nNama : Peter Gabriel Sompotan\nNIM : 210211060245\nKelas : TIK2032D`);
   }
 });
 
