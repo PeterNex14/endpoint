@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
     const area = Math.PI * radius ** 2;
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.end(`The area of a circle with radius ${radius} is ${area}.\n`);
+    res.end(`Luas lingkaran dengan radius ${radius} adalah ${area}.\n`);
   }
 });
 
